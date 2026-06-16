@@ -2,12 +2,15 @@ package com.vinay.elearning;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 public class Employee {
 
     @Id
     private Long id;
+
+    @NotBlank(message = "Name is required")
 
     private String name;
 

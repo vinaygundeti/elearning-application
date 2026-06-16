@@ -1,5 +1,6 @@
 package com.vinay.elearning;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,7 +14,7 @@ public class EmployeeController {
     private EmployeeService employeeService;
 
     @PostMapping
-    public Employee saveEmployee(@RequestBody Employee employee) {
+    public Employee saveEmployee(@RequestBody @Valid Employee employee) {
         return employeeService.saveEmployee(employee);
     }
 
