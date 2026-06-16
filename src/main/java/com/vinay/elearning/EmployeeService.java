@@ -20,7 +20,8 @@ public class EmployeeService {
     }
 
     public Employee getEmployeeById(long id) {
-        return employeeRepository.findById(id).orElse(null);
+        return employeeRepository.findById(id).orElseThrow(() ->
+                new EmployeeNotFoundException("Employee not found with id : " + id));
     }
 
     public Employee updateEmployee(long id, Employee employee) {
