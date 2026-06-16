@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(EmployeeNotFoundException.class)
-    public ResponseEntity<String> handleEmployeeNotFoundException(
+    public ResponseEntity<ErrorResponse> handleEmployeeNotFoundException(
             EmployeeNotFoundException ex) {
-
+             ErrorResponse errorResponse = new ErrorResponse(ex.getMessage(), 404);
         return new ResponseEntity<>(
-                ex.getMessage(),
+                errorResponse,
                 HttpStatus.NOT_FOUND
         );
     }
