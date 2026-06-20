@@ -34,7 +34,7 @@ A Spring Boot REST API project developed using Java, Spring Boot, Spring Data JP
 | GET | /students | Get All Students |
 | GET | /students/{id} | Get Student By ID |
 | PUT | /students/{id} | Update Student |
-| DELETE | /students/{id} | Delete Studeny |
+| DELETE | /students/{id} | Delete Student |
 
 ## Author
 
