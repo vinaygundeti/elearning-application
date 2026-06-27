@@ -4,11 +4,11 @@ A Spring Boot REST API project developed using Java, Spring Boot, Spring Data JP
 
 ## Features
 
-- Add Employee
-- Get Employee By ID
-- Get All Employees
-- Update Employee
-- Delete Employee
+- Add Student
+- Get Student By ID
+- Get All Student
+- Update Student
+- Delete Student
 
 ## Technologies Used
 
@@ -30,11 +30,11 @@ A Spring Boot REST API project developed using Java, Spring Boot, Spring Data JP
 
 | Method | Endpoint | Description |
 |----------|----------|-------------|
-| POST | /employees | Create Employee |
-| GET | /employees | Get All Employees |
-| GET | /employees/{id} | Get Employee By ID |
-| PUT | /employees/{id} | Update Employee |
-| DELETE | /employees/{id} | Delete Employee |
+| POST | /student | Create student |
+| GET | /students | Get All Students |
+| GET | /students/{id} | Get Student By ID |
+| PUT | /students/{id} | Update Student |
+| DELETE | /students/{id} | Delete Student |
 
 ## Author
 
