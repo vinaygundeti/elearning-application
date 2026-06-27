@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>My Courses</title>
+</head>
+<body>
+
+<h1>My Enrolled Courses</h1>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>ID</th>
+        <th>Course Name</th>
+        <th>Status</th>
+        <th>Complete Course</th>
+        <th>Certificate</th>
+    </tr>
+
+    <tr th:each="enrollment : ${enrollments}">
+        <td th:text="${enrollment.id}"></td>
+        <td th:text="${enrollment.courseName}"></td>
+        <td th:text="${enrollment.status}"></td>
+
+        <td>
+            <a th:if="${enrollment.status != 'Completed'}"
+               th:href="@{/complete-course(id=${enrollment.id})}">
+                Complete Course
+            </a>
+
+            <span th:if="${enrollment.status == 'Completed'}">
+                Completed
+            </span>
+        </td>
+
+        <td>
+            <a th:if="${enrollment.certificateGenerated}"
+               th:href="@{/certificate(id=${enrollment.id})}">
+                View Certificate
+            </a>
+
+            <span th:unless="${enrollment.certificateGenerated}">
+                Not Available
+            </span>
+        </td>
+    </tr>
+
+</table>
+
+<br><br>
+
+<a href="/dashboard">Back to Dashboard</a>
+
+</body>
+</html>

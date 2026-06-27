@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Enroll Course</title>
+</head>
+<body>
+
+<h2>Course Enrollment</h2>
+
+<form action="/save-enrollment" method="post">
+
+    Student Email:
+    <input type="email" name="studentEmail" required>
+    <br><br>
+
+    Select Course:
+    <select name="courseName">
+
+        <option th:each="course : ${courses}"
+                th:value="${course.courseName}"
+                th:text="${course.courseName}">
+        </option>
+
+    </select>
+
+    <br><br>
+
+    <button type="submit">Enroll</button>
+
+</form>
+
+<br>
+
+<a href="/dashboard">Back</a>
+
+</body>
+</html>

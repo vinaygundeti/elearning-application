@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Courses</title>
+</head>
+<body>
+
+<h2>Course List</h2>
+<form action="/courses" method="get">
+    <input type="text" name="keyword" placeholder="Search Course">
+    <button type="submit">Search</button>
+</form>
+
+<br>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Course Name</th>
+        <th>Trainer Name</th>
+        <th>Duration</th>
+        <th>Actions</th>
+        <th>Video</th>
+    </tr>
+
+    <tr th:each="course : ${courses}">
+        <td th:text="${course.id}"></td>
+        <td th:text="${course.courseName}"></td>
+        <td th:text="${course.trainerName}"></td>
+        <td th:text="${course.duration}"></td>
+        <td><a th:href="${course.videoUrl}" target="_blank">Watch Video</a> </td>
+
+        <td>
+            <a th:href="@{/edit-course(id=${course.id})}">Edit</a>
+            |
+            <a th:href="@{/delete-course(id=${course.id})}">Delete</a>
+        </td>
+    </tr>
+
+</table>
+
+<br>
+
+<a href="/admin-dashboard">Back to Dashboard</a>
+
+</body>
+</html>

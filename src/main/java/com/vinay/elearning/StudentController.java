@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/students")
+@RequestMapping("/api/students")
 public class StudentController {
 
     @Autowired
@@ -36,6 +36,7 @@ public class StudentController {
 
     @DeleteMapping("/{id}")
     public String deleteStudent(@PathVariable long id) {
-        return studentService.deleteStudent(id);
+        studentService.deleteStudent(id);
+        return "Student Delete Successfully";
     }
 }
