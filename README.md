@@ -1,6 +1,7 @@
 # E-Learning Application
 
-A Spring Boot REST API project developed using Java, Spring Boot, Spring Data JPA, MySQL, and Maven.
+A Full Stack E-Learning Application built using Spring Boot,MySQL,Thymeleaf,HTML,CSS,and BootStrap.
+
 
 ## Features
 
@@ -18,6 +19,10 @@ A Spring Boot REST API project developed using Java, Spring Boot, Spring Data JP
 - MySQL
 - Maven
 - Lombok
+- Thymeleaf
+- html
+- css
+- bootstrap
 
 ## Project Structure
 
